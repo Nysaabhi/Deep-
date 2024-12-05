@@ -729,17 +729,29 @@ function showReserveOverlay(selectedCity = null) {
     align-self: center; /* Center content if needed */
 }
 
-.reserve-header {
-    flex-shrink: 0;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-top: 10px; 
-    margin-bottom: 15px; 
-    padding-bottom: 20px; 
-    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-    width: 100%; /* Ensure full width */
+.reserve-header { 
+    padding: 10px 20px; /* Slightly increased padding for better spacing */
+    background: rgba(26, 26, 31, 0.9); /* Slightly more transparent for a modern look */
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    left: 0; 
+    z-index: 30; 
+    border-bottom: 2px solid var(--primary-color); 
+    backdrop-filter: blur(12px); /* Slightly stronger blur effect for depth */
+    height: 70px; /* Increased height for improved proportions */
+    display: flex; /* Flex layout for better alignment of child elements */
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Space out content (like logo and menu items) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow for elevation */
+    transition: background 0.3s, height 0.3s; /* Smooth transition for hover or scroll effects */
 }
+
+.header:hover {
+    background: rgba(26, 26, 31, 0.85); /* Slightly lighter on hover for interaction feedback */
+    height: 72px; /* Subtle size increase on hover */
+}
+
 
 .close-reserve {
   background: none;
@@ -754,6 +766,7 @@ function showReserveOverlay(selectedCity = null) {
     max-width: 100vw; /* Override any max-width constraints */
     margin-left: calc(-50vw + 50%); /* Center container horizontally */
     padding: 0 15px; /* Optional side padding */
+    margin-top: 60px;
     box-sizing: border-box;
 }
 
